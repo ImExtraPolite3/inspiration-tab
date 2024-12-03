@@ -20,6 +20,12 @@ function CreateButtons() {
   return buttonName.map((eachButton, index) => {
     const handleChangeButtonColor = () => {
       setChangeButtonColor(eachButton);
+      chrome.windows.create({
+        url: 'index.html',
+        type: 'popup',
+        width: 400,
+        height: 300,
+      });
     };
 
     return (
