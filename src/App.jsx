@@ -1,5 +1,12 @@
+import DisplayButtons from './Components/CreateButtons';
+
 function App() {
-  <h1>Hello</h1>;
+  return (
+    <>
+      <h1>Inspiration tab</h1>
+      <DisplayButtons />
+    </>
+  );
 }
 
 export default App;
