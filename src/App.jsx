@@ -1,10 +1,7 @@
-import DisplayButtons from './Components/CreateButtons';
-
 function App() {
   return (
     <>
-      <h1>Inspiration tab</h1>
-      <DisplayButtons />
+      <h1>HEllo</h1>
     </>
   );
 }
