@@ -1,5 +1,21 @@
 import ParticlesComponent from './Particles';
 
+const navLinks = ['About Me', 'Projects', 'Contact Me'];
+
+function LinksProp({ linkName }) {
+  return (
+    <li className={linkName}>
+      <a href="#">{linkName}</a>
+    </li>
+  );
+}
+
+function CreateLinks() {
+  return navLinks.map((eachLink, index) => {
+    return <LinksProp key={index} linkName={eachLink} />;
+  });
+}
+
 export default function StartPage() {
   return (
     <>
@@ -11,15 +27,7 @@ export default function StartPage() {
           </div>
           <div className="nav-buttons">
             <ul>
-              <li>
-                <a href="#">About Me</a>
-              </li>
-              <li>
-                <a href="#">Projects</a>
-              </li>
-              <li>
-                <a href="#">Contact Me</a>
-              </li>
+              <CreateLinks />
             </ul>
           </div>
         </nav>
