@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'HankenGrotesk';
+  src: url(HankenGrotesk.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'HankenGrotesk';
+  color: white;
+}
+
+.start-page {
+  height: 100vh;
+}
+
+nav,
+section {
+  position: relative;
+  z-index: 2;
+}
