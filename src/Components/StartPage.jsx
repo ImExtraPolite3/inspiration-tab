@@ -1,5 +1,3 @@
-import ParticlesComponent from './Particles';
-
 const navLinks = ['About Me', 'Projects', 'Contact Me'];
 
 function LinksProp({ linkName }) {
@@ -19,7 +17,6 @@ function CreateLinks() {
 export default function StartPage() {
   return (
     <>
-      <ParticlesComponent id="particles" />
       <div className="start-page">
         <nav>
           <div className="page-name">
@@ -31,7 +28,7 @@ export default function StartPage() {
             </ul>
           </div>
         </nav>
-        <section>
+        <section className="intro">
           <h1>Hi, Im Abdul</h1>
           <p>Aspiring web developer</p>
         </section>
