@@ -27,7 +27,9 @@ export default function AboutMe() {
         </p>
       </div>
       <div className="skills">
-        <CreateImages />
+        <div className="skills-inner">
+          <CreateImages />
+        </div>
       </div>
     </div>
   );
