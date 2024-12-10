@@ -1,7 +1,7 @@
 import AboutMe from './Components/AboutMe';
 import ParticlesComponent from './Components/Particles';
+import Projects from './Components/Projects';
 import StartPage from './Components/StartPage';
-AboutMe;
 
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
       <div className="whole-page">
         <StartPage />
         <AboutMe />
+        <Projects />
       </div>
     </>
   );
