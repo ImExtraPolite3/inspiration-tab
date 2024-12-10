@@ -51,13 +51,63 @@ nav {
 }
 
 .about-me {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
   background-color: #333;
 }
 
+.about-me-text,
+.skills {
+  height: 40%;
+}
+
+.about-me-text {
+  width: 50vw;
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  p {
+    font-size: 2rem;
+  }
+}
+
+.skills {
+  width: 30vw;
+  overflow-x: hidden;
+  display: flex;
+}
+
+.skills-inner {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+  animation: allImages 10s linear infinite;
+}
+
 .image {
-  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 120px;
+  border: solid;
+  background-color: white;
 
   img {
-    width: 100%;
+    width: 50%;
+  }
+}
+
+@keyframes allImages {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-80%);
   }
 }
