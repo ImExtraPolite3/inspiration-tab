@@ -1,3 +1,7 @@
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";    
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 const projects = [
   'Sentence Search',
   'Rock Paper Scissors',
@@ -51,13 +55,37 @@ function CreateProject() {
       <EachProject
         key={index}
         projectName={eachProject}
-        projectLinks={projectLinks[index]}
+        // projectLinks={projectLinks[index]}
       />
     );
   });
 }
 
 export default function Projects() {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.projects',
+        pin: true,
+        start: 1400,
+        end: 1700,
+        scrub: 1,
+        ease: 'linear',
+      }
+  })
+
+  useGSAP(() => {
+    tl.to('.project-text .used-skills', {
+      height: 0,
+      paddingBottom: 0,
+      opacity: 0,
+      stagger: .5,
+    })
+    tl.to('project-text', {
+      marginBottom: -20
+    }, '<')
+  })
+
+
   return (
     <div className="projects">
       <h1>Projects</h1>
@@ -67,3 +95,5 @@ export default function Projects() {
     </div>
   );
 }
+
+gsap.registerPlugin(useGSAP,ScrollTrigger);
