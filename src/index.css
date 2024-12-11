@@ -103,6 +103,29 @@ nav {
   }
 }
 
+.all-projects {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.all-projects > div {
+  display: flex;
+  background-color: #333;
+  gap: 20px;
+  padding: 30px;
+
+  embed {
+    background-color: white;
+  }
+}
+
+.project-text > ul {
+  list-style: none;
+}
+
 @keyframes allImages {
   0% {
     transform: translateX(0px);
