@@ -67,7 +67,7 @@ export default function Projects() {
         trigger: '.projects',
         pin: true,
         start: 1400,
-        end: 1700,
+        end: 1720,
         scrub: 1,
         ease: 'linear',
       }
