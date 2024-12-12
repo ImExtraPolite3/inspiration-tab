@@ -1,3 +1,8 @@
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";    
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { TextPlugin } from "gsap/TextPlugin";
+
 const navLinks = ['About Me', 'Projects', 'Contact Me'];
 
 function LinksProp({ linkName }) {
@@ -15,6 +20,16 @@ function CreateLinks() {
 }
 
 export default function StartPage() {
+  useGSAP(() => {
+    gsap.to('.intro > h1', {
+      duration: 1,
+      text:  {
+        value: "Hi, I'm Abdul",
+      },
+      ease: 'linear',
+    })
+  })
+
   return (
     <>
       <div className="start-page">
@@ -29,10 +44,12 @@ export default function StartPage() {
           </div>
         </nav>
         <section className="intro">
-          <h1>Hi, Im Abdul</h1>
+          <h1></h1>
           <p>Aspiring web developer</p>
         </section>
       </div>
     </>
   );
 }
+
+gsap.registerPlugin(useGSAP,ScrollTrigger,TextPlugin);

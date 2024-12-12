@@ -1,6 +1,7 @@
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";    
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { TextPlugin } from "gsap/TextPlugin";
 
 const projects = [
   'Sentence Search',
@@ -96,4 +97,4 @@ export default function Projects() {
   );
 }
 
-gsap.registerPlugin(useGSAP,ScrollTrigger);
+gsap.registerPlugin(useGSAP,ScrollTrigger,TextPlugin);
