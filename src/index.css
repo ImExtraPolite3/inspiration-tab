@@ -39,6 +39,10 @@ nav {
   text-decoration: none;
 }
 
+.nav-buttons > ul > li > a:hover {
+  border-bottom: solid white;
+}
+
 .intro {
   display: flex;
   flex-direction: column;
