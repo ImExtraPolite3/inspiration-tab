@@ -20,10 +20,9 @@ export default function AboutMe() {
       <div className="about-me-text">
         <h1>About Me</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
-          optio repellendus nihil! Ad, placeat rem unde eos cum distinctio
-          deleniti incidunt sequi minus illum veniam repudiandae blanditiis,
-          asperiores sint nobis.
+          Hardworking student seeking employment. Ready to make use of my skills
+          in web development to further the mission of a company. Have a strong
+          willingness and motivation to learn new programs.
         </p>
       </div>
       <div className="skills">
