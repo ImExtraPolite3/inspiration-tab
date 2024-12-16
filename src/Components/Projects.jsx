@@ -17,7 +17,14 @@ const projectLinks = [
   'https://imextrapolite3.github.io/journey-through-the-solar-system/',
 ];
 
-function EachProject({ projectName, projectLinks }) {
+const projectImgs = [
+  'sentence-shuffle-img',
+  'rock-paper-scissors-img',
+  'tic-tac-toe-img',
+  'journey-through-the-solar-system-img',
+];
+
+function EachProject({ projectName, projectLinks, projectImgs }) {
   return (
     <div className={projectName}>
       <div className="project-text">
@@ -44,7 +51,7 @@ function EachProject({ projectName, projectLinks }) {
         </ul>
       </div>
       <div className="project-image">
-        <embed src={projectLinks} width="500px" height="300px" />
+        <img src={projectImgs} />
       </div>
     </div>
   );
@@ -56,6 +63,7 @@ function CreateProject() {
       <EachProject
         key={index}
         projectName={eachProject}
+        projectImgs={`${projectImgs[index]}.png`}
         // projectLinks={projectLinks[index]}
       />
     );

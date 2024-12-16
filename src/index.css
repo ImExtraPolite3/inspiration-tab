@@ -118,9 +118,6 @@ nav {
   gap: 30px;
 }
 
-.projects > h1 {
-}
-
 .all-projects {
   width: 90%;
   margin: auto;
@@ -134,14 +131,15 @@ nav {
   background-color: #333;
   gap: 20px;
   padding: 30px;
-
-  embed {
-    background-color: white;
-  }
 }
 
 .project-text > ul {
   list-style: none;
+}
+
+.project-image > img {
+  width: 400px;
+  height: 200px;
 }
 
 /* @keyframes allImages {
