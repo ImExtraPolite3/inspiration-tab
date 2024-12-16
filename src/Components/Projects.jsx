@@ -2,6 +2,9 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TextPlugin } from 'gsap/TextPlugin';
+import React from 'react';
+
+gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin);
 
 const projects = [
   'Sentence Search',
@@ -26,34 +29,36 @@ const projectImgs = [
 
 function EachProject({ projectName, projectLinks, projectImgs }) {
   return (
-    <div className={projectName}>
-      <div className="project-text">
-        <h1>{projectName}</h1>
-        <ul className="used-skills">
-          <li>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta
-            porro ut exercitationem accusantium? Sapiente omnis magnam labore
-            nostrum nesciunt corporis maiores, rem tempore doloremque
-            repudiandae aliquid dignissimos non quibusdam? Perspiciatis!
-          </li>
-          <li>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta
-            porro ut exercitationem accusantium? Sapiente omnis magnam labore
-            nostrum nesciunt corporis maiores, rem tempore doloremque
-            repudiandae aliquid dignissimos non quibusdam? Perspiciatis!
-          </li>
-          <li>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta
-            porro ut exercitationem accusantium? Sapiente omnis magnam labore
-            nostrum nesciunt corporis maiores, rem tempore doloremque
-            repudiandae aliquid dignissimos non quibusdam? Perspiciatis!
-          </li>
-        </ul>
+    <a href={projectLinks} target="_blank" className="project-links">
+      <div className="each-project">
+        <div className="project-text">
+          <h1>{projectName}</h1>
+          <ul className="used-skills">
+            <li>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta
+              porro ut exercitationem accusantium? Sapiente omnis magnam labore
+              nostrum nesciunt corporis maiores, rem tempore doloremque
+              repudiandae aliquid dignissimos non quibusdam? Perspiciatis!
+            </li>
+            <li>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta
+              porro ut exercitationem accusantium? Sapiente omnis magnam labore
+              nostrum nesciunt corporis maiores, rem tempore doloremque
+              repudiandae aliquid dignissimos non quibusdam? Perspiciatis!
+            </li>
+            <li>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta
+              porro ut exercitationem accusantium? Sapiente omnis magnam labore
+              nostrum nesciunt corporis maiores, rem tempore doloremque
+              repudiandae aliquid dignissimos non quibusdam? Perspiciatis!
+            </li>
+          </ul>
+        </div>
+        <div className="project-image">
+          <img src={projectImgs} />
+        </div>
       </div>
-      <div className="project-image">
-        <img src={projectImgs} />
-      </div>
-    </div>
+    </a>
   );
 }
 
@@ -64,41 +69,31 @@ function CreateProject() {
         key={index}
         projectName={eachProject}
         projectImgs={`${projectImgs[index]}.png`}
-        // projectLinks={projectLinks[index]}
+        projectLinks={projectLinks[index]}
       />
     );
   });
 }
 
 export default function Projects() {
-  // let iteration = 0;
-
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: '.projects',
-      pin: true,
-      start: 1400,
-      end: 1720,
-      scrub: 1,
-      ease: 'linear',
-    },
-  });
-
-  useGSAP(() => {
-    tl.to('.project-text .used-skills', {
-      height: 0,
-      paddingBottom: 0,
-      opacity: 0,
-      stagger: 0.5,
-    });
-    tl.to(
-      'project-text',
-      {
-        marginBottom: -20,
-      },
-      '<'
-    );
-  });
+  React.useEffect(() => {
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: '.projects',
+          start: '0 80%', // Adjust based on layout
+          end: 'bottom 20%',
+          scrub: true,
+          markers: true,
+        },
+      })
+      .from('.each-project', {
+        opacity: 0,
+        y: 50,
+        stagger: 0.3,
+        duration: 1,
+      });
+  }, []);
 
   return (
     <div className="projects">
@@ -109,5 +104,3 @@ export default function Projects() {
     </div>
   );
 }
-
-gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin);

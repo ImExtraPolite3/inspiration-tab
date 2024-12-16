@@ -126,7 +126,11 @@ nav {
   gap: 50px;
 }
 
-.all-projects > div {
+.all-projects > a {
+  text-decoration: none;
+}
+
+.all-projects > a > div {
   display: flex;
   background-color: #333;
   gap: 20px;
