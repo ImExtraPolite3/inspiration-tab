@@ -1,7 +1,7 @@
-import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";    
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { TextPlugin } from "gsap/TextPlugin";
+import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { TextPlugin } from 'gsap/TextPlugin';
 
 const projects = [
   'Sentence Search',
@@ -63,29 +63,34 @@ function CreateProject() {
 }
 
 export default function Projects() {
+  // let iteration = 0;
+
   const tl = gsap.timeline({
     scrollTrigger: {
-        trigger: '.projects',
-        pin: true,
-        start: 1400,
-        end: 1720,
-        scrub: 1,
-        ease: 'linear',
-      }
-  })
+      trigger: '.projects',
+      pin: true,
+      start: 1400,
+      end: 1720,
+      scrub: 1,
+      ease: 'linear',
+    },
+  });
 
   useGSAP(() => {
     tl.to('.project-text .used-skills', {
       height: 0,
       paddingBottom: 0,
       opacity: 0,
-      stagger: .5,
-    })
-    tl.to('project-text', {
-      marginBottom: -20
-    }, '<')
-  })
-
+      stagger: 0.5,
+    });
+    tl.to(
+      'project-text',
+      {
+        marginBottom: -20,
+      },
+      '<'
+    );
+  });
 
   return (
     <div className="projects">
@@ -97,4 +102,4 @@ export default function Projects() {
   );
 }
 
-gsap.registerPlugin(useGSAP,ScrollTrigger,TextPlugin);
+gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin);

@@ -110,9 +110,20 @@ nav {
   }
 }
 
+.projects {
+  width: 90%;
+  margin: 30px auto 20vh auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.projects > h1 {
+}
+
 .all-projects {
-  width: 80%;
-  margin: 10vh auto 20vh auto;
+  width: 90%;
+  margin: auto;
   display: flex;
   flex-direction: column;
   gap: 50px;
