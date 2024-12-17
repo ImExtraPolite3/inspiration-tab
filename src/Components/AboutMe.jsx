@@ -1,3 +1,7 @@
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { useRef } from 'react';
+
 const images = ['css', 'git', 'html', 'javascript', 'npm', 'react', 'webpack'];
 
 function ImagesProp({ imagesSource }) {
@@ -15,6 +19,26 @@ function CreateImages() {
 }
 
 export default function AboutMe() {
+  const carouselRef = useRef(null); // Reference to the skills-inner container
+
+  useGSAP(() => {
+    const carousel = carouselRef.current;
+
+    // Duplicate content for seamless looping
+    const items = Array.from(carousel.children);
+    items.forEach((item) => {
+      const clone = item.cloneNode(true);
+      carousel.appendChild(clone);
+    });
+
+    gsap.to('.skills-inner', {
+      xPercent: -100,
+      duration: 50,
+      ease: 'none',
+      repeat: -1,
+    });
+  });
+
   return (
     <div id="about-me">
       <div className="about-me-text">
@@ -26,7 +50,7 @@ export default function AboutMe() {
         </p>
       </div>
       <div className="skills">
-        <div className="skills-inner">
+        <div className="skills-inner" ref={carouselRef}>
           <CreateImages />
         </div>
       </div>

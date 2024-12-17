@@ -90,7 +90,7 @@ nav {
 
 .skills {
   width: 30vw;
-  overflow-x: scroll;
+  overflow-x: hidden;
   display: flex;
 }
 
