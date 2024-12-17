@@ -81,7 +81,7 @@ export default function Projects() {
       .timeline({
         scrollTrigger: {
           trigger: '.projects',
-          start: '0 80%', // Adjust based on layout
+          start: 'top 80%', // Adjust based on layout
           end: 'bottom 20%',
           scrub: true,
           markers: true,
@@ -96,7 +96,7 @@ export default function Projects() {
   }, []);
 
   return (
-    <div className="projects">
+    <div id="projects">
       <h1>Projects</h1>
       <div className="all-projects">
         <CreateProject />

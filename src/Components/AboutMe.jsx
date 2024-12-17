@@ -16,7 +16,7 @@ function CreateImages() {
 
 export default function AboutMe() {
   return (
-    <div className="about-me">
+    <div id="about-me">
       <div className="about-me-text">
         <h1>About Me</h1>
         <p>

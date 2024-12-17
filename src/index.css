@@ -58,7 +58,7 @@ nav {
   font-size: 1.5rem;
 }
 
-.about-me {
+#about-me {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,7 +110,7 @@ nav {
   }
 }
 
-.projects {
+#projects {
   width: 90%;
   margin: 30px auto 20vh auto;
   display: flex;
