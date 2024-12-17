@@ -17,7 +17,7 @@
 
 .whole-page {
   display: grid;
-  grid-template-rows: 8vh repeat(2, 100vh);
+  grid-template-rows: 8vh repeat(2, 100vh) 85vh;
 }
 
 .start-page {
@@ -116,15 +116,15 @@ nav {
 }
 
 #projects {
-  width: 90%;
   margin: 30px auto 20vh auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 30px;
 }
 
 .all-projects {
-  width: 90%;
+  width: 85%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -133,6 +133,11 @@ nav {
 
 .all-projects > a {
   text-decoration: none;
+  transition: all 200ms;
+}
+
+.all-projects > a:hover {
+  transform: scale(1.05);
 }
 
 .all-projects > a > div {

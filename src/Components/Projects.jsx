@@ -2,7 +2,7 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TextPlugin } from 'gsap/TextPlugin';
-import React from 'react';
+import { useRef } from 'react';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin);
 
@@ -76,23 +76,24 @@ function CreateProject() {
 }
 
 export default function Projects() {
-  React.useEffect(() => {
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: '.projects',
-          start: 'top 80%', // Adjust based on layout
-          end: 'bottom 20%',
-          scrub: true,
-        },
-      })
-      .from('.each-project', {
-        opacity: 0,
-        y: 50,
-        stagger: 0.3,
-        duration: 1,
-      });
-  }, []);
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#projects',
+        start: '#projects',
+        pin: true,
+        scrub: 1,
+      },
+    });
+
+    tl.to('.project-links', {
+      height: 0,
+      paddingBottom: 0,
+      opacity: 0,
+      stagger: 0.5,
+      marginBottom: -20,
+    });
+  });
 
   return (
     <div id="projects">
