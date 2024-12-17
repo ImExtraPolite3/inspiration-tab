@@ -1,4 +1,4 @@
-const navLinks = ['About Me', 'Projects', 'Contact Me'];
+const navLinks = ['About Me', 'Projects'];
 
 const links = ['#about-me', '#projects'];
 
@@ -18,10 +18,18 @@ function CreateLinks() {
 
 export default function NavBar() {
   return (
-    <div className="nav-buttons">
-      <ul>
-        <CreateLinks />
-      </ul>
-    </div>
+    <nav>
+      <div className="page-name">
+        <h3>Abdul</h3>
+      </div>
+      <div className="nav-buttons">
+        <ul>
+          <CreateLinks />
+          <li>
+            <a href="#">Contact Me</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   );
 }

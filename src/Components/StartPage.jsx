@@ -18,12 +18,7 @@ export default function StartPage() {
   return (
     <>
       <div className="start-page">
-        <nav>
-          <div className="page-name">
-            <h3>Abdul</h3>
-          </div>
-          <NavBar />
-        </nav>
+        <NavBar />
         <section className="intro">
           <h1></h1>
           <p>Aspiring web developer</p>
