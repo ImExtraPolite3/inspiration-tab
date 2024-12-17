@@ -2,24 +2,7 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TextPlugin } from 'gsap/TextPlugin';
-
-const navLinks = ['About Me', 'Projects', 'Contact Me'];
-
-const links = ['#about-me', '#projects'];
-
-function LinksProp({ linkName, links }) {
-  return (
-    <li className={linkName}>
-      <a href={links}>{linkName}</a>
-    </li>
-  );
-}
-
-function CreateLinks() {
-  return navLinks.map((eachLink, index) => {
-    return <LinksProp key={index} links={links[index]} linkName={eachLink} />;
-  });
-}
+import NavBar from './NavBar';
 
 export default function StartPage() {
   useGSAP(() => {
@@ -39,11 +22,7 @@ export default function StartPage() {
           <div className="page-name">
             <h3>Abdul</h3>
           </div>
-          <div className="nav-buttons">
-            <ul>
-              <CreateLinks />
-            </ul>
-          </div>
+          <NavBar />
         </nav>
         <section className="intro">
           <h1></h1>
