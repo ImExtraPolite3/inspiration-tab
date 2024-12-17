@@ -9,7 +9,7 @@ import NavBar from './Components/NavBar';
 function App() {
   const [showContact, setShowContact] = useState('none');
   const [hideContent, setHideContent] = useState('');
-  const [showMenu, setShowMenu] = useState('');
+  const [showMenu, setShowMenu] = useState('none');
 
   const handleShowMenu = () => {
     if (showMenu === 'none') {
