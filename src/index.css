@@ -53,7 +53,10 @@ nav {
   flex-direction: column;
   margin-top: 30vh;
   align-items: center;
-  /* text-align: center; */
+}
+
+.menu {
+  display: none;
 }
 
 .intro > h1 {
@@ -158,6 +161,14 @@ nav {
 }
 
 @media (max-width: 800px) {
+  .nav-buttons {
+    display: none;
+  }
+
+  .menu {
+    display: block;
+  }
+
   #about-me {
     grid-template-columns: 100%;
     align-items: center;

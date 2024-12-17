@@ -2,7 +2,6 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TextPlugin } from 'gsap/TextPlugin';
-import { useRef } from 'react';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin);
 

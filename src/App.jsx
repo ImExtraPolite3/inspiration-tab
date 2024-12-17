@@ -9,6 +9,15 @@ import NavBar from './Components/NavBar';
 function App() {
   const [showContact, setShowContact] = useState('none');
   const [hideContent, setHideContent] = useState('');
+  const [showMenu, setShowMenu] = useState('');
+
+  const handleShowMenu = () => {
+    if (showMenu === 'none') {
+      setShowMenu('block');
+    } else {
+      setShowMenu('none');
+    }
+  };
 
   const handleShowContact = () => {
     setShowContact('');
@@ -19,7 +28,11 @@ function App() {
     <>
       <ParticlesComponent id="particles" />
       <div className="whole-page" style={{ display: hideContent }}>
-        <NavBar onClick={handleShowContact} />
+        <NavBar
+          onClick={handleShowContact}
+          showMenu={showMenu}
+          clickMenu={handleShowMenu}
+        />
         <StartPage />
         <AboutMe />
         <Projects />

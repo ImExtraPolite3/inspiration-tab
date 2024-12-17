@@ -16,13 +16,16 @@ function CreateLinks() {
   });
 }
 
-export default function NavBar({ onClick }) {
+export default function NavBar({ onClick, clickMenu, showMenu }) {
   return (
     <nav>
       <div className="page-name">
         <h3>Abdul</h3>
       </div>
-      <div className="nav-buttons">
+      <div className="menu">
+        <button onClick={clickMenu}>menu</button>
+      </div>
+      <div className="nav-buttons" style={{ display: showMenu }}>
         <ul>
           <CreateLinks />
           <li>
