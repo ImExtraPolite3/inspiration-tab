@@ -84,7 +84,6 @@ export default function Projects() {
           start: 'top 80%', // Adjust based on layout
           end: 'bottom 20%',
           scrub: true,
-          markers: true,
         },
       })
       .from('.each-project', {

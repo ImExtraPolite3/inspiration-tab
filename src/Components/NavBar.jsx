@@ -16,7 +16,7 @@ function CreateLinks() {
   });
 }
 
-export default function NavBar() {
+export default function NavBar({ onClick }) {
   return (
     <nav>
       <div className="page-name">
@@ -26,7 +26,9 @@ export default function NavBar() {
         <ul>
           <CreateLinks />
           <li>
-            <a href="#">Contact Me</a>
+            <button className="contact-me-button" onClick={onClick}>
+              Contact Me
+            </button>
           </li>
         </ul>
       </div>

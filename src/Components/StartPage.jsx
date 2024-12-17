@@ -2,7 +2,6 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TextPlugin } from 'gsap/TextPlugin';
-import NavBar from './NavBar';
 
 export default function StartPage() {
   useGSAP(() => {
@@ -18,7 +17,6 @@ export default function StartPage() {
   return (
     <>
       <div className="start-page">
-        <NavBar />
         <section className="intro">
           <h1></h1>
           <p>Aspiring web developer</p>
