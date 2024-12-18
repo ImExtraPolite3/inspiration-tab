@@ -199,6 +199,10 @@ nav {
   background-color: gray;
 }
 
+#contact-me > nav > h3:hover {
+  cursor: pointer;
+}
+
 @media (max-width: 800px) {
   .nav-buttons {
     position: absolute;

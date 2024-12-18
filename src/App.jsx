@@ -37,7 +37,13 @@ function App() {
         <AboutMe />
         <Projects />
       </div>
-      <ContactMe hideContact={showContact} />
+      <ContactMe
+        hideContact={showContact}
+        onClick={() => {
+          setShowContact('none');
+          setHideContent('');
+        }}
+      />
     </>
   );
 }

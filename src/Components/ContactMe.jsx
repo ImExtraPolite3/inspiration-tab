@@ -1,8 +1,8 @@
-export default function ContactMe({ hideContact }) {
+export default function ContactMe({ hideContact, onClick }) {
   return (
     <div id="contact-me" style={{ display: hideContact }}>
       <nav>
-        <h3>Abdul</h3>
+        <h3 onClick={onClick}>Abdul</h3>
       </nav>
       <div>
         <input type="text" placeholder="Email Title" />
