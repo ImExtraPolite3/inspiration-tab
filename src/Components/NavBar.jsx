@@ -1,5 +1,5 @@
+import { useMediaQuery } from 'react-responsive';
 const navLinks = ['About Me', 'Projects'];
-
 const links = ['#about-me', '#projects'];
 
 function LinksProp({ linkName, links }) {
@@ -17,6 +17,8 @@ function CreateLinks() {
 }
 
 export default function NavBar({ onClick, clickMenu, showMenu }) {
+  const bigScreen = useMediaQuery({ query: '(min-width: 800px)' });
+
   return (
     <nav>
       <div className="page-name">
@@ -25,7 +27,7 @@ export default function NavBar({ onClick, clickMenu, showMenu }) {
       <div className="menu">
         <img src="menu.svg" alt="" onClick={clickMenu} />
       </div>
-      <div className="nav-buttons" style={{ display: showMenu }}>
+      <div className="nav-buttons" style={{ display: bigScreen || showMenu }}>
         <ul>
           <CreateLinks />
           <li>

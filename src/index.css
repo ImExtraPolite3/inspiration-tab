@@ -46,6 +46,7 @@ nav {
 .nav-buttons > ul > li > a:hover,
 .nav-buttons > ul > li > button:hover {
   border-bottom: solid white;
+  cursor: pointer;
 }
 
 .intro {
@@ -57,6 +58,10 @@ nav {
 
 .menu {
   display: none;
+}
+
+.menu:hover {
+  cursor: pointer;
 }
 
 .intro > h1 {
@@ -162,20 +167,12 @@ nav {
 
 @media (max-width: 800px) {
   .nav-buttons {
-    display: none;
-  }
-
-  .nav-buttons {
     position: absolute;
     top: 50px;
     right: 20px;
 
     ul {
       flex-direction: column;
-
-      li {
-        float: right;
-      }
     }
   }
 
