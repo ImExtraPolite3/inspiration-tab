@@ -23,7 +23,7 @@ export default function NavBar({ onClick, clickMenu, showMenu }) {
         <h3>Abdul</h3>
       </div>
       <div className="menu">
-        <button onClick={clickMenu}>menu</button>
+        <img src="menu.svg" alt="" onClick={clickMenu} />
       </div>
       <div className="nav-buttons" style={{ display: showMenu }}>
         <ul>
